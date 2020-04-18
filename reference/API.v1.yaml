@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: API
+  version: '1.0'
+  contact:
+    email: developer@sportlogic.com.au
+    url: 'https://www.sportlogic.com.au'
+servers:
+  - url: 'https://www.tennisvenues.com.au/api/v1'
+    description: TennisVenues AU Endpoint
+  - url: 'https://au.racquetvenues.com/api/v1'
+    description: RacquetVenues AU Endpoint
+  - url: 'https://nz.tennisvenues.com/api/v1'
+    description: TennisVenues NZ Endpoint
+  - url: 'https://www.tennisvenues.com/api/v1'
+    description: TennisVenues USA Endpoint
+paths:
+  /domain/stats/bookings-by-suburb:
+    get:
+      summary: Bookings-by-Suburb statistics
+      tags:
+        - Statistics Domain
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./BookingsBySuburbStats.v1.json
+      operationId: get-domain-stats-bookings-by-suburb
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: suburb
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: state
+          required: true
+        - schema:
+            type: string
+            format: date
+            example: '2020-02-28'
+          in: query
+          name: dateFrom
+          required: true
+          description: ''
+        - schema:
+            type: string
+            format: date
+            example: '2020-03-15'
+          in: query
+          name: dateTo
+          required: true
+          description: ''
+components:
+  schemas: {}
+  securitySchemes:
+    API Key:
+      name: apiKey
+      type: apiKey
+      in: header

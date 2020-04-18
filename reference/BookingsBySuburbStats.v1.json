@@ -1,0 +1,56 @@
+{
+  "title": "BookingsBySuburbStats",
+  "type": "object",
+  "x-examples": {
+    "Example": {
+      "suburb": "MELBOURNE",
+      "state": "VIC",
+      "dateFrom": "2020-04-18",
+      "dateTo": "2020-04-30",
+      "totalCount": 873,
+      "totalDuration": 78570,
+      "bookingStatus": {
+        "onlineBookingCount": 288,
+        "onlineBookingDuration": 17280
+      }
+    }
+  },
+  "description": "BookingsBySuburbStats",
+  "properties": {
+    "suburb": {
+      "type": "string"
+    },
+    "totalCount": {
+      "type": "integer",
+      "description": "total number of bookings."
+    },
+    "totalDuration": {
+      "type": "string",
+      "description": "total duration in minutes."
+    },
+    "state": {
+      "type": "string"
+    },
+    "bookingStats": {
+      "$ref": "./BookingStats.v1.json"
+    },
+    "dateTo": {
+      "type": "string",
+      "format": "date",
+      "example": "2020-04-30"
+    },
+    "dateFrom": {
+      "type": "string",
+      "format": "date",
+      "example": "2020-04-18"
+    }
+  },
+  "required": [
+    "suburb",
+    "totalCount",
+    "totalDuration",
+    "state",
+    "dateTo",
+    "dateFrom"
+  ]
+}

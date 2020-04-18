@@ -1,0 +1,13 @@
+{
+  "title": "BookingStats",
+  "type": "object",
+  "properties": {
+    "onlineBookingCount": {
+      "type": "integer"
+    },
+    "onlineBookingDuration": {
+      "type": "integer"
+    }
+  },
+  "description": "BookingStats"
+}
