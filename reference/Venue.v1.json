@@ -1,0 +1,37 @@
+{
+  "title": "Venue.v1",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "bookingEnabled": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "alias",
+    "name",
+    "active",
+    "bookingEnabled"
+  ],
+  "x-examples": {
+    "Queensland Tennis Centre": {
+      "id": 1,
+      "alias": "qtc",
+      "name": "Queensland Tennis Centre",
+      "active": true,
+      "bookingEnabled": true
+    }
+  }
+}
