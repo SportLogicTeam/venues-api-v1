@@ -58,7 +58,8 @@ paths:
   '/venues/{id}':
     get:
       summary: Get Venue by ID
-      tags: []
+      tags:
+        - Venue Domain
       responses:
         '200':
           description: OK
@@ -91,3 +92,5 @@ components:
       name: API Password
       type: apiKey
       in: header
+tags:
+  - name: Venue Domain
