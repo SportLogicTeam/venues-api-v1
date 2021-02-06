@@ -55,10 +55,39 @@ paths:
           name: dateTo
           required: true
           description: ''
+  '/venues/{id}':
+    get:
+      summary: Get Venue by ID
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./Venue.v1.json
+        '404':
+          description: Not Found
+      operationId: get-venue
+      security:
+        - apiKey: []
+        - apiPass: []
+      description: Get venue by id.
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: venue id
 components:
   schemas: {}
   securitySchemes:
-    API Key:
-      name: apiKey
+    apiKey:
+      name: API Key
+      type: apiKey
+      in: header
+    apiPass:
+      name: API Password
       type: apiKey
       in: header
