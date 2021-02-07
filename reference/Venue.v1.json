@@ -1,5 +1,5 @@
 {
-  "title": "Venue.v1",
+  "title": "Venue",
   "type": "object",
   "properties": {
     "id": {
@@ -33,5 +33,6 @@
       "active": true,
       "bookingEnabled": true
     }
-  }
+  },
+  "description": ""
 }

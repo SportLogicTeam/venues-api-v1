@@ -81,6 +81,25 @@ paths:
         in: path
         required: true
         description: venue id
+  /venues:
+    get:
+      summary: Get Venues List
+      tags:
+        - Venue Domain
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./Venue.v1.json
+      operationId: get-venues
+      description: Get venues list.
+      security:
+        - apiKey: []
+        - apiPass: []
 components:
   schemas: {}
   securitySchemes:
